@@ -16,7 +16,9 @@ Los 120 frames pueden ser cambiados desde el inspector de Unity (atributo públi
 Se ha utilizado el método Random.Range() para generar los valores aleatorios de los canales de color.
 Se ha utilizado el método GetComponent<Renderer>() para obtener el componente Renderer del objeto y poder cambiar su color.
 
-(Gif)
+En la animación se cambia el valor de los frames.
+
+![](gifs/Animation.gif)
 
 ### Ejercicio 2: Características de Vector3
 
@@ -24,7 +26,7 @@ El script CaracteristicasVector3.cs muestra en el inspector las características
 
 Se ha utilizado el método Vector3.Magnitude() para obtener la magnitud de los vectores, el método Vector3.Angle() para obtener el ángulo entre ellos y el método Vector3.Distance() para obtener la distancia entre ellos.
 
-(Gif)
+![](gifs/Animation2.gif)
 
 ### Ejercicio 3: Texto en pantalla
 
@@ -32,12 +34,14 @@ El script TextoPantalla.cs permite mostrar un texto en pantalla mostrando el val
 
 Se ha utilizado el método GameObject.FindWithTag() para encontrar el objeto con el tag "esfera_basica" y obtener su posición.
 
-(Gif)
+Se puso el código en el método Update() para que se actualice la posición de la esfera en tiempo real como se ve en la animación.
+
+![](gifs/Animation3.gif)
 
 ### Ejercicio 4: Distancia entre cilindro y cubo
 
 El script DistanciaCilindroCubo.cs permite calcular la distancia entre un cilindro y un cubo, mostrando el resultado en consola.
 
-Se ha utilizado el método GameObject.Find() para encontrar los objetos por su nombre y el método Vector3.Distance() para calcular la distancia entre ellos.
+Se vuelve a utilizar el método GameObject.FindWithTag() para encontrar los objetos con los tags "cilindro_basico" y "cubo_basico" y obtener sus posiciones.
 
-(Gif)
+![](gifs/Animation4.gif)
