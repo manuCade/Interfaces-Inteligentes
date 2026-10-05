@@ -82,11 +82,13 @@ Si se cambia el sistema de coordenadas en el `Transform.Translate()` a `Space.Wo
 
 ### Ejercicio 9: Movimiento de un cubo con las teclas de dirección
 
-Se ha creado un cubo y tiene un script `Movimiento_ej9.cs` que tiene como variables públicas un float `speed`.
+Se ha creado un cubo y una esfera con los scripts `MovimientoCubo_ej9.cs` y `MovimientoEsfera_ej9.cs` respectivamente. Ambos scripts tienen como variables públicas un float `speed` para poder modificarla desde el inspector.
 
-El script tiene como características:
-- Utiliza `Input.GetAxis("Horizontal")` y `Input.GetAxis("Vertical")` para detectar cuando se pulsa las teclas de dirección y así mover el cubo en los ejes 'x' y 'y' respectivamente.
-- Luego se usa `Transform.Translate()` para mover el cubo en la dirección de movimiento multiplicada por la velocidad.
+Para el script del cubo, se utiliza `Input.GetKey(KeyCode.RightArrow)`, `Input.GetKey(KeyCode.LeftArrow)`, `Input.GetKey(KeyCode.UpArrow)` y `Input.GetKey(KeyCode.DownArrow)` para detectar cuando se pulsa una tecla de dirección y así mover el cubo en la dirección correspondiente.
+
+Para la esfera, se utiliza la misma función, pero para las teclas `D`, `A`, `W` y `S` para mover la esfera en la dirección correspondiente.
+
+De esta manera se mueven de forma independiente.
 
 ![Gif del ejercicio 9](./gifs/ej9.gif)
 
