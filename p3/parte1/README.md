@@ -15,12 +15,16 @@ No ocurre nada, el cubo no tiene ninguna fuerza que lo haga moverse porque la gr
 
 ![Gif del ejercicio 1](./gifs/p3-1-01-bien.gif)
 
+---
+
 ### Ejercicio 2
 
 Añadimos un `Rigidbody` a la esfera.
 La esfera cae y rebota primero con el cubo y después con el plano. Finalmente rueda hasta caer fuera de este y desaparece de la vista de la cámara.
 
 ![Gif del ejercicio 2](./gifs/p3-1-02.gif)
+
+---
 
 ### Ejercicicio 3
 
@@ -30,6 +34,8 @@ Si forzamos que el cubo interactúe con la esfera, se aplica una fuerza al cubo 
 
 ![Gif del ejercicio 3](./gifs/p3-1-03.gif)
 
+---
+
 ### Ejercicio 4
 
 Añadimos un `Rigidbody` al plano (y desactivamos `is Kinematic` en la esfera).
@@ -37,17 +43,23 @@ Como todos tienen la gravedad activada, no hay un "suelo firme", por lo que todo
 
 ![Gif del ejercicio 4](./gifs/p3-1-04.gif)
 
+---
+
 ### Ejercicio 5
 
 Activamos `is Kinematic` en el plano para que no caiga. Aplicamos una masa de 10 (`Mass` = 10) a la esfera frente a la masa de 1 del cubo. La esfera cae y al chocar con el cubo, este es movido un poquito.
 
 ![Gif del ejercicio 5](./gifs/p3-1-05.gif)
 
+---
+
 ### Ejercicio 6
 
 Aplicamos una masa de 100 (`Mass` = 100) a la esfera. El cubo es movido mucho más, y la esfera cae y apenas rueda por el plano.
 
 ![Gif del ejercicio 6](./gifs/p3-1-06.gif)
+
+---
 
 ### Ejercicio 7
 
@@ -61,9 +73,13 @@ Con un `Angular Damping` de 1, la esfera se detiene algo menos, pero funciona ta
 
 ### Ejercicio 8
 
+---
+
 Aplicamos `is Trigger` a la esfera y activamos `is Kinematic`. La esfera ahora no colisiona con otros objetos, sino que los atraviesa. Si hacemos el mismo experimento que en el ejercicio 3, el cubo no es repelido por la esfera, sino que la atraviesa y cae al plano.
 
 ![Gif del ejercicio 8](./gifs/p3-1-08.gif)
+
+---
 
 ### Ejercicio 9
 
