@@ -7,7 +7,7 @@ public class CollideBad : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        other.GetComponentInChildren<Renderer>().material.color = Color.red;
+        other.GetComponent<Renderer>().material.color = Color.red;
     }
 
     void OnTriggerStay(Collider other)
@@ -17,6 +17,6 @@ public class CollideBad : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        other.GetComponentInChildren<Renderer>().material.color = Color.white;
+        other.GetComponent<Renderer>().material.color = Color.white;
     }
 }

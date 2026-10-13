@@ -4,11 +4,11 @@ public class CollideGood : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        other.GetComponentInChildren<Renderer>().material.color = Color.green;
+        other.GetComponent<Renderer>().material.color = Color.green;
     }
 
     void OnTriggerExit(Collider other)
     {
-        other.GetComponentInChildren<Renderer>().material.color = Color.white;
+        other.GetComponent<Renderer>().material.color = Color.white;
     }
 }
