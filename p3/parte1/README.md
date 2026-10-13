@@ -63,13 +63,25 @@ Aplicamos una masa de 100 (`Mass` = 100) a la esfera. El cubo es movido mucho m�
 
 ### Ejercicio 7
 
+Para cumplir con que el suelo sea objeto físico y que los objetos no caigan, aplicamos un `Rigidbody` al plano y le quitamos la gravedad. Sin embargo, tanto el cubo como la esfera caen y desaparecen de la vista de la cámara. Para ello, hay que poner que el mesh del plano tenga la opción `Convex` activada.
+Ahora tendremos un nuevo problema: la fuerza del cubo y la esfera cayendo hace que todos caigan. Para ello, hay que aplicar restricciones de movimiento y rotación al plano, para que no se mueva ni rote.
+Finalmente los objetos ya no caen, pero ambos van a rebotar y rodar hasta que se detengan. Esto se debe a que se activó `Convex` y cambia el collider.
+
+![Gif del ejercicio 7](./gifs/p3-1-07-convex.gif)
+
+*Para la prueba de la fricción, se asumió que el plano es cinemático. Más tarde me dí cuenta de que podría haber cambiado el collider a un `Box Collider` y no habría hecho falta poner el plano como cinemático.*
+
 La fricción de la esfera fue probada con el cambio de dos valores: `Linear Damping` y `Angular Damping`. Aplicando un `Linear Damping` de 1, la esfera se detiene mucho antes y no cae del plano.
 
-![Gif del ejercicio 6 con Linear Damping = 0](./gifs/p3-1-07-linear.gif)
+![Gif del ejercicio 7 con Linear Damping = 1](./gifs/p3-1-07-linear.gif)
 
 Con un `Angular Damping` de 1, la esfera se detiene algo menos, pero funciona también como fricción.
 
-![Gif del ejercicio 6 con Linear Damping = 1](./gifs/p3-1-07-angular.gif)
+![Gif del ejercicio 7 con Angular Damping = 1](./gifs/p3-1-07-angular.gif)
+
+Sin embargo, ambos valores de `Damping` lo que hacen es reducir la velocidad de la esfera independientemente de la superficie del plano, por lo que cuenta más como "fricción del aire". La fricción real se puede aplicar con el `Physic Material` de la esfera con un valor de `Dynamic Friction` de 1, y un `Static Friction` de 1. La esfera tiene el mismo comportamiento que sin aplicar el `Physic Material`.
+
+![Gif del ejercicio 7 con Physic Material](./gifs/p3-1-07-mal.gif)
 
 ### Ejercicio 8
 

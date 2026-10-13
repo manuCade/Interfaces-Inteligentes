@@ -12,12 +12,17 @@ Manuel Cadenas García \<[alu0101636849@ull.edu.es](mailto:alu0101636849@ull.edu
 ### Ejercicio 1
 
 Se crea una cápsula con un `Rigidbody`. Para que no se caiga por los lados, se anula la rotación para los ejes X y Z (estética).
-Luego se crea un script en el que tomamos un vector de dirección y un parámetro de velocidad. Después aplicamos el método `MovePosition` al `Rigidbody` para mover la cápsula en la dirección deseada.
+
+Luego se crea un script en el que tomamos un vector de dirección y un parámetro de velocidad. 
+La dirección se obtiene en `Update()` con `Input.GetAxis("Horizontal")` y `Input.GetAxis("Vertical")`, que nos da un valor entre -1 y 1.
+Después aplicamos el método `MovePosition` al `Rigidbody` para mover la cápsula en la dirección deseada.
 La línea que hace la magia es la siguiente:
 
 ```csharp
 rigidbody.MovePosition(rigidbody.position + speed * Time.fixedDeltaTime * direction);
 ```
+
+Todo esto se aplica en `FixedUpdate()` porque es el método que se ejecuta en cada frame de física, y no en `Update()` que se ejecuta en cada frame de renderizado.
 
 Donde usamos `Time.fixedDeltaTime` para que la velocidad sea constante y no dependa de los FPS.
 
@@ -74,6 +79,6 @@ Luego, se creó un script que utilizando `AddForce` hace que los cubos se muevan
 Para que los objetos no utilicen `Rigidbody`, se recicló el script de una práctica anterior que utiliza `LookAt` y `Translate` para mover un objeto hacia otro (de la esfera al cilindro).
 
 En otro script (dentro del cubo) se hace que al colisionar con la esfera, esta cambie de color al material que esté escogido para el cubo. No podemos hacer `OnCollisionEnter` ni `OnTriggerEnter` porque no hay `Rigidbody` con el que colisionar.
-En su lugar, se utilizó el componente `Collider` y su componente propio `bounds` para detectar si la esfera está dentro del cubo. Si lo está, se cambia el color de la esfera al color del cubo.
+En su lugar, se utilizó el componente `Collider` y su componente propio `bounds` para detectar con el método `Intersects()` si interacciona con el bounds del otro collider dado como parámetro. Si lo está, se cambia el color de la esfera al color del cubo. Para que no cambie de color constantemente, se hace que solo cambie de color si no había intersección en el frame anterior.
 
 ![Gif del ejercicio 6](./gifs/p3-2-06.gif)
