@@ -1,33 +1,3 @@
-// using UnityEngine;
-
-// public class Recolector : MonoBehaviour
-// {
-//     public int puntosEscudo1 = 5;
-//     public int puntosEscudo2 = 10;
-
-//     private int puntuacion = 0;
-
-//     void OnCollisionEnter(Collision collision)
-//     {
-//         if (collision.gameObject.CompareTag("Escudo1"))
-//         {
-//             Recoger(collision.gameObject, puntosEscudo1);
-//         }
-//         else if (collision.gameObject.CompareTag("Escudo2"))
-//         {
-//             Recoger(collision.gameObject, puntosEscudo2);
-//         }
-//     }
-
-//     void Recoger(GameObject escudo, int puntos)
-//     {
-//         puntuacion += puntos;
-//         Destroy(escudo);
-//         Debug.Log("+" + puntos + " puntos! Puntuación: " + puntuacion);
-//     }
-// }
-
-
 using UnityEngine;
 
 public class Recolector : MonoBehaviour
